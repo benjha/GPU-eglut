@@ -52,32 +52,9 @@ typedef void (*EGLUTspecialCB)(int);
 
 
 #if defined(__cplusplus)
-
 extern "C"
 {
-	void eglutInitAPIMask(int mask);
-	void eglutInitWindowSize(int width, int height);
-	void eglutInit(int argc, char **argv);
-
-	int eglutGet(int state);
-
-	void eglutIdleFunc(EGLUTidleCB func);
-	void eglutPostRedisplay(void);
-
-	void eglutMainLoop(void);
-
-	int eglutCreateWindow(const char *title);
-	void eglutDestroyWindow(int win);
-
-	int eglutGetWindowWidth(void);
-	int eglutGetWindowHeight(void);
-
-	void eglutDisplayFunc(EGLUTdisplayCB func);
-	void eglutReshapeFunc(EGLUTreshapeCB func);
-	void eglutKeyboardFunc(EGLUTkeyboardCB func);
-	void eglutSpecialFunc(EGLUTspecialCB func);
-}
-#else
+#endif
 
 void eglutInitAPIMask(int mask);
 void eglutInitWindowSize(int width, int height);
@@ -89,7 +66,6 @@ void eglutIdleFunc(EGLUTidleCB func);
 void eglutPostRedisplay(void);
 
 void eglutMainLoop(void);
-
 int eglutCreateWindow(const char *title);
 void eglutDestroyWindow(int win);
 
@@ -100,7 +76,9 @@ void eglutDisplayFunc(EGLUTdisplayCB func);
 void eglutReshapeFunc(EGLUTreshapeCB func);
 void eglutKeyboardFunc(EGLUTkeyboardCB func);
 void eglutSpecialFunc(EGLUTspecialCB func);
-
+#if defined(__cplusplus)
+}
 #endif
+
 
 #endif /* EGLUT_H */
